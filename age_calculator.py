@@ -20,10 +20,31 @@ if CurrentMonth > birthMonth:
     months = CurrentMonth - birthMonth
 else:
     if CurrentDay < birthday:
-        months = CurrentMonth - 1
+        months = 12 - birthMonth
     else:
-        months = CurrentMonth
+        months = 13 - birthMonth
 
 print(months,'months')
 
 #To get days
+def remainingdays(birthMonth, birthday):
+    months_days = {
+        1:31,
+        2:28,
+        3:31,
+        4:30,
+        5:31,
+        6:30,
+        7:31,
+        8:31,
+        9:30,
+        10:31,
+        11:30,
+        12:31
+    }
+    return months_days[birthMonth] - birthday
+if CurrentDay > birthday:
+    days = CurrentDay - birthday
+else:
+    days = remainingdays(birthMonth,birthday) + CurrentDay + 1
+print(days,'days')
