@@ -43,8 +43,9 @@ def remainingdays(birthMonth, birthday):
         12:31
     }
     return months_days[birthMonth] - birthday
+leap_year = CurrentYear/4 == 0
 if CurrentDay > birthday:
     days = CurrentDay - birthday
 else:
-    days = remainingdays(birthMonth,birthday) + CurrentDay + 1
+    days = remainingdays(birthMonth,birthday) + CurrentDay + 1 + leap_year
 print(days,'days')
